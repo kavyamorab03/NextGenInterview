@@ -5,17 +5,8 @@
       "src": "backend/main.py",
       "use": "@vercel/python",
       "config": {
-        "pythonVersion": "3.10.8"
+        "pythonVersion": "3.x"
       }
     }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "backend/main.py"
-    }
-  ],
-  "env": {
-    "PORT": "8000"
-  }
+  ]
 }
