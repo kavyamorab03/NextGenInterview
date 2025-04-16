@@ -3,7 +3,8 @@ import numpy as np
 import torch
 import librosa
 import torchaudio
-import language_tool_python
+from language_tool_python import LanguageToolPublicAPI
+#import language_tool_python
 from sentence_transformers import SentenceTransformer, util
 from transformers import pipeline
 import google.generativeai as genai
@@ -17,7 +18,9 @@ genai.configure(api_key=os.getenv("GEMINI_API_KEY"))  # Use .env for security
 gemini_model = genai.GenerativeModel("gemini-1.5-flash")
 
 # === Load NLP Models ===
-grammar_tool = language_tool_python.LanguageTool('en-US')
+# Switched to LanguageToolPublicAPI to avoid Java dependency
+grammar_tool = LanguageToolPublicAPI('en-US')
+
 
 # === Load Speechbrain Models ===
 whisper_model = WhisperModel("base")  # Use "medium" or "large" if needed
