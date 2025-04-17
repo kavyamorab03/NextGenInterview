@@ -9,14 +9,13 @@ pdfplumber
 google-generativeai
 python-docx
 python-multipart
-transformers
-sentence-transformers
 language-tool-python
 librosa
-torch
-torchaudio
+# Specify the extra index URL for CPU-only PyTorch
+-f https://download.pytorch.org/whl/torch_stable.html
+
+torch==2.1.0+cpu
+torchaudio==2.1.0+cpu
 speechrecognition
-faster-whisper
 speechbrain
 email-validator
-language-tool-python
