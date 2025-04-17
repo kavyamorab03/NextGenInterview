@@ -11,11 +11,8 @@ python-docx
 python-multipart
 language-tool-python
 librosa
-# Specify the extra index URL for CPU-only PyTorch
--f https://download.pytorch.org/whl/torch_stable.html
-
-torch==2.1.0+cpu
-torchaudio==2.1.0+cpu
+torch
+torchaudio
 transformers
 speechrecognition
 speechbrain
