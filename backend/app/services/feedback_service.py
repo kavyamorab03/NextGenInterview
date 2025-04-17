@@ -4,13 +4,8 @@ import torch
 import librosa
 import torchaudio
 from language_tool_python import LanguageToolPublicAPI
-#import language_tool_python
-from sentence_transformers import SentenceTransformer, util
-from transformers import pipeline
 import google.generativeai as genai
-from faster_whisper import WhisperModel  # Import Whisper for transcription
 from speechbrain.inference.interfaces import foreign_class
-from app.models.interview import InterviewSession
 from app.database import db
 from typing import Optional
 # === Configure Gemini ===
@@ -23,7 +18,6 @@ grammar_tool = LanguageToolPublicAPI('en-US')
 
 
 # === Load Speechbrain Models ===
-whisper_model = WhisperModel("base")  # Use "medium" or "large" if needed
 classifier = foreign_class(
     source="speechbrain/emotion-recognition-wav2vec2-IEMOCAP",
     pymodule_file="custom_interface.py",
